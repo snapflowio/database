@@ -5,8 +5,8 @@ declare(strict_types=1);
 namespace Snapflow\Database\Builders;
 
 use InvalidArgumentException;
-use Snapflow\Database\Raw;
 use PDO;
+use Snapflow\Database\Raw;
 
 class QueryBuilder
 {

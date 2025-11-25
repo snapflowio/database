@@ -6,13 +6,14 @@ namespace Snapflow\Database;
 
 use Exception;
 use InvalidArgumentException;
+use PDO;
+use PDOException;
+use PDOStatement;
 use Snapflow\Database\Adapters\AdapterFactory;
 use Snapflow\Database\Adapters\DatabaseAdapterInterface;
 use Snapflow\Database\Builders\QueryBuilder;
 use Snapflow\Database\Mappers\DataMapper;
-use PDO;
-use PDOException;
-use PDOStatement;
+use Snapflow\Database\Raw;
 
 class Database
 {

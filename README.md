@@ -11,7 +11,9 @@ composer require snapflowio/database
 ## Basic Usage
 
 ```php
-use Snapflow\Database\Database;
+<?php
+
+use Snapflow\Database\Database\Database;
 
 // Connect to database
 $database = new Database([
