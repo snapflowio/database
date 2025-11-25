@@ -1,0 +1,130 @@
+name: Bug Report
+description: Report a bug or unexpected behavior in Snapflow Database
+title: "[Bug]: "
+labels: ["bug", "needs-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to report a bug! Please fill out the sections below to help us investigate.
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Bug Description
+      description: A clear and concise description of what the bug is.
+      placeholder: When I call the select() method with specific WHERE conditions, it doesn't behave as expected...
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Steps to Reproduce
+      description: Provide detailed steps to reproduce the bug.
+      placeholder: |
+        1. Create a Database instance with PostgreSQL connection
+        2. Call $db->select('users', ['name', 'email'], ['age[>]' => 25])
+        3. Observe that...
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected Behavior
+      description: What did you expect to happen?
+      placeholder: The query should return users older than 25...
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual Behavior
+      description: What actually happened? Include any error messages.
+      placeholder: |
+        Instead, got error:
+        PHP Fatal error: ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: code
+    attributes:
+      label: Code Sample
+      description: Provide a minimal code sample that reproduces the issue.
+      placeholder: |
+        ```php
+        <?php
+
+        use Snapflow\Database\Database;
+
+        $db = new Database([
+            'type' => 'pgsql',
+            'host' => 'localhost',
+            'database' => 'test_db',
+            'username' => 'postgres',
+            'password' => 'password'
+        ]);
+
+        // Your code that causes the issue
+        $result = $db->select('users', ['name', 'email']);
+        ```
+      render: php
+    validations:
+      required: false
+
+  - type: input
+    id: version
+    attributes:
+      label: Library Version
+      description: Which version are you using? (tag, commit hash, or "main")
+      placeholder: v1.0.0, commit abc123, or main
+    validations:
+      required: true
+
+  - type: input
+    id: php-version
+    attributes:
+      label: PHP Version
+      description: Output of `php -v`
+      placeholder: PHP 8.3.0 (cli)
+    validations:
+      required: true
+
+  - type: input
+    id: postgres-version
+    attributes:
+      label: PostgreSQL Version
+      description: Output of `psql --version`
+      placeholder: psql (PostgreSQL) 16.1
+    validations:
+      required: true
+
+  - type: input
+    id: os
+    attributes:
+      label: Operating System
+      description: What OS are you using?
+      placeholder: Ubuntu 22.04, Arch Linux, macOS 14.0, Windows 11
+    validations:
+      required: true
+
+  - type: textarea
+    id: additional
+    attributes:
+      label: Additional Context
+      description: Add any other context about the problem here (SQL query output, stack traces, database logs, etc.)
+      placeholder: |
+        Generated SQL (from $db->debug()->select(...)):
+        ```sql
+        SELECT "name", "email" FROM "users" WHERE "age" > 25
+        ```
+
+        Stack trace:
+        ```
+        Fatal error: ...
+        ```
+    validations:
+      required: false

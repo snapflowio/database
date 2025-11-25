@@ -1,0 +1,22 @@
+{
+    "name": "snapflowio/database",
+    "description": "A simple and lightweight database abstraction layer.",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Snapflow\\Database\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "BryanLawless",
+            "email": "thelawlessbryan@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "php": ">=8.0",
+        "ext-pdo": "*"
+    }
+}

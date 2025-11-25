@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: GitHub Discussions
+    url: https://github.com/snapflowio/storage/discussions
+    about: For general questions and discussions, please use GitHub Discussions
+  - name: Documentation
+    url: https://pkg.go.dev/github.com/snapflowio/storage
+    about: View API documentation and examples on pkg.go.dev
